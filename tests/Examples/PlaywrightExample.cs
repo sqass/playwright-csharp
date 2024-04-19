@@ -1,11 +1,8 @@
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Microsoft.Playwright;
 using Microsoft.Playwright.NUnit;
-using NUnit.Framework;
 
 namespace PlaywrightTests;
-
 
 [TestFixture]
 public class PlaywrightExample : PageTest
@@ -20,14 +17,17 @@ public class PlaywrightExample : PageTest
 
         // create a locator
         var getStarted = Page.GetByRole(AriaRole.Link, new() { Name = "Get started" });
+       
 
         // Expect an attribute "to be strictly equal" to the value.
+        await Expect(getStarted).ToBeAttachedAsync();
         await Expect(getStarted).ToHaveAttributeAsync("href", "/docs/intro");
+        
 
         // Click the get started link.
         await getStarted.ClickAsync();
 
         // Expects the URL to contain intro.
-        await Expect(Page).ToHaveURLAsync(new Regex(".*intro"));
+        await Expect(Page).ToHaveURLAsync("https://playwright.dev/docs/intro");
     }
 }
