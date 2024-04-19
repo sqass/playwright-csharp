@@ -414,3 +414,5 @@ obj/Debug/net8.0/playwright-csharp.pdb
 obj/Debug/net8.0/playwright-csharp.sourcelink.json
 obj/Debug/net8.0/ref/playwright-csharp.dll
 obj/Debug/net8.0/refint/playwright-csharp.dll
+bin/Debug/net8.0/Faker.Net.6.0.dll
+bin/Debug/net8.0/de-DE/Faker.Net.6.0.resources.dll
